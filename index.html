@@ -189,59 +189,71 @@
       color: var(--text-light);
       font-size: 1em;
     }
+    /* Improved Ratings Section */
     .reviews-section {
       margin: 24px 24px 0 24px;
       padding-bottom: 16px;
       border-top: 1px solid #222;
     }
-    .reviews-header {
+    .ratings-summary {
       display: flex;
-      gap: 24px;
-      align-items: flex-end;
-      margin-bottom: 16px;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 18px;
     }
-    .reviews-score {
-      font-size: 2em;
+    .ratings-main {
+      min-width: 80px;
+      text-align: center;
+    }
+    .ratings-main .score {
+      font-size: 2.2em;
       font-weight: 700;
       color: var(--accent);
       line-height: 1;
     }
-    .reviews-stars {
+    .ratings-main .stars {
       color: var(--star);
-      font-size: 1.2em;
+      font-size: 1.3em;
       letter-spacing: 2px;
       margin: 4px 0;
     }
-    .reviews-count {
+    .ratings-main .count {
       color: var(--text-light);
       font-size: 1em;
     }
-    .reviews-bars {
+    .ratings-bars {
       flex: 1;
-      min-width: 120px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 4px;
     }
-    .bar-row {
+    .ratings-bar-row {
       display: flex;
       align-items: center;
-      gap: 6px;
-      margin-bottom: 3px;
+      gap: 8px;
     }
-    .bar-row span {
+    .ratings-bar-row .bar-label {
       width: 14px;
-      font-size: 1em;
       color: var(--text-light);
+      font-size: 1em;
+      text-align: right;
     }
-    .bar {
+    .ratings-bar {
       flex: 1;
-      height: 8px;
+      height: 12px;
       background: #333;
-      border-radius: 5px;
+      border-radius: 6px;
       overflow: hidden;
+      position: relative;
     }
-    .bar-fill {
+    .ratings-bar-fill {
       height: 100%;
       background: var(--accent);
-      border-radius: 5px;
+      border-radius: 6px;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
     .review-list {
       display: flex;
@@ -332,8 +344,12 @@
       .screenshots-row { gap: 8px; padding: 16px 4vw 0 4vw; }
       .screenshots-row img { height: 90px; min-width: 60px; }
       .section, .reviews-section, .more-by-section { padding: 16px 4vw 0 4vw; margin: 0; }
-      .reviews-header { flex-direction: column; gap: 8px; align-items: flex-start; }
-      .reviews-score { font-size: 1.3em; }
+      .ratings-summary { flex-direction: column; gap: 8px; align-items: flex-start; }
+      .ratings-main { min-width: 0; }
+      .ratings-main .score { font-size: 1.5em; }
+      .ratings-main .stars { font-size: 1em; }
+      .ratings-bars { width: 100%; }
+      .ratings-bar { height: 10px; }
       .review { flex-direction: column; align-items: flex-start; gap: 6px; }
       .review-avatar { width: 32px; height: 32px; }
       .more-list { gap: 8px; }
@@ -374,6 +390,7 @@
       <img src="2.jpg" alt="Screenshot 2">
       <img src="3.jpg" alt="Screenshot 3">
       <img src="4.jpg" alt="Screenshot 4">
+      <img src="5.jpg" alt="Screenshot 5">
     </div>
     <div class="section">
       <div class="section-title">About this app</div>
@@ -396,18 +413,33 @@
     </div>
     <div class="reviews-section">
       <div class="section-title">Ratings and reviews</div>
-      <div class="reviews-header">
-        <div>
-          <div class="reviews-score">4.6</div>
-          <div class="reviews-stars">★★★★★</div>
-          <div class="reviews-count">2,345 reviews</div>
+      <div class="ratings-summary">
+        <div class="ratings-main">
+          <div class="score">4.6</div>
+          <div class="stars">★★★★★</div>
+          <div class="count">2,345 reviews</div>
         </div>
-        <div class="reviews-bars">
-          <div class="bar-row"><span>5</span><div class="bar"><div class="bar-fill" style="width: 80%"></div></div></div>
-          <div class="bar-row"><span>4</span><div class="bar"><div class="bar-fill" style="width: 12%"></div></div></div>
-          <div class="bar-row"><span>3</span><div class="bar"><div class="bar-fill" style="width: 5%"></div></div></div>
-          <div class="bar-row"><span>2</span><div class="bar"><div class="bar-fill" style="width: 2%"></div></div></div>
-          <div class="bar-row"><span>1</span><div class="bar"><div class="bar-fill" style="width: 1%"></div></div></div>
+        <div class="ratings-bars">
+          <div class="ratings-bar-row">
+            <span class="bar-label">5</span>
+            <div class="ratings-bar"><div class="ratings-bar-fill" style="width: 80%"></div></div>
+          </div>
+          <div class="ratings-bar-row">
+            <span class="bar-label">4</span>
+            <div class="ratings-bar"><div class="ratings-bar-fill" style="width: 12%"></div></div>
+          </div>
+          <div class="ratings-bar-row">
+            <span class="bar-label">3</span>
+            <div class="ratings-bar"><div class="ratings-bar-fill" style="width: 5%"></div></div>
+          </div>
+          <div class="ratings-bar-row">
+            <span class="bar-label">2</span>
+            <div class="ratings-bar"><div class="ratings-bar-fill" style="width: 2%"></div></div>
+          </div>
+          <div class="ratings-bar-row">
+            <span class="bar-label">1</span>
+            <div class="ratings-bar"><div class="ratings-bar-fill" style="width: 1%"></div></div>
+          </div>
         </div>
       </div>
       <div class="review-list">
