@@ -6,72 +6,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <style>
-    .play-navbar {
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 1px 4px #0001;
-  padding: 0;
-  margin: 0 0 16px 0;
-}
-.play-navbar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  height: 56px;
-  padding: 0 24px;
-}
-.play-logo {
-  width: 32px;
-  height: 32px;
-  margin-right: 8px;
-}
-.play-title {
-  font-size: 1.5em;
-  font-weight: 500;
-  color: #444;
-  margin-right: 32px;
-  font-family: 'Roboto', Arial, sans-serif;
-}
-.play-nav {
-  display: flex;
-  gap: 24px;
-}
-.play-nav a {
-  color: #444;
-  text-decoration: none;
-  font-size: 1.1em;
-  padding: 0 0 4px 0;
-  position: relative;
-  font-family: 'Roboto', Arial, sans-serif;
-}
-.play-nav a.active {
-  color: #00897b;
-  font-weight: 500;
-}
-.play-nav a.active::after {
-  content: "";
-  display: block;
-  margin: 0 auto;
-  width: 28px;
-  border-bottom: 3px solid #00897b;
-  border-radius: 2px;
-  margin-top: 2px;
-}
     body {
       background: #f5f5f5;
       font-family: 'Roboto', Arial, sans-serif;
       margin: 0;
       color: #222;
     }
+    .play-navbar {
+      width: 100%;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      box-shadow: 0 1px 4px #0001;
+      padding: 0;
+      margin: 0 0 16px 0;
+      z-index: 10;
+      position: relative;
+    }
+    .play-navbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      height: 56px;
+      padding: 0 24px;
+    }
+    .play-logo {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    .play-title {
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #444;
+      margin-right: 32px;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .play-nav {
+      display: flex;
+      gap: 24px;
+    }
+    .play-nav a {
+      color: #444;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 0 0 4px 0;
+      position: relative;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .play-nav a.active {
+      color: #00897b;
+      font-weight: 500;
+    }
+    .play-nav a.active::after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      width: 28px;
+      border-bottom: 3px solid #00897b;
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+    .container-flex {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 32px;
+      align-items: flex-start;
+      padding: 0 24px;
+    }
     .main-container {
-      max-width: 900px;
-      margin: 32px auto;
+      flex: 1 1 0;
       background: #fff;
       border-radius: 18px;
       box-shadow: 0 2px 16px #0002;
       padding: 0 0 32px 0;
+      margin-top: 32px;
+      min-width: 0;
     }
     .header-row {
       display: flex;
@@ -164,68 +175,292 @@
       margin-top: 16px;
       text-align: center;
     }
+    .similar-apps {
+      width: 260px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px #0001;
+      padding: 20px 16px;
+      font-family: 'Roboto', Arial, sans-serif;
+      margin-top: 32px;
+    }
+    .similar-title {
+      font-size: 1.1em;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    .similar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .similar-app {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #222;
+      gap: 12px;
+      transition: background 0.15s;
+      border-radius: 8px;
+      padding: 4px 4px;
+    }
+    .similar-app:hover {
+      background: #f5f5f5;
+    }
+    .similar-app img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #eee;
+    }
+    .similar-name {
+      font-size: 1em;
+      font-weight: 500;
+    }
+    .similar-rating {
+      color: #888;
+      font-size: 0.95em;
+    }
+    /* Ratings and reviews section */
+    .reviews-section {
+      margin: 40px 40px 0 40px;
+      padding-bottom: 32px;
+      border-top: 1px solid #eee;
+    }
+    .reviews-header {
+      display: flex;
+      gap: 40px;
+      align-items: flex-end;
+      margin-bottom: 24px;
+    }
+    .reviews-score {
+      font-size: 2.8em;
+      font-weight: 700;
+      color: #388e3c;
+      line-height: 1;
+    }
+    .reviews-stars {
+      color: #fbc02d;
+      font-size: 1.5em;
+      letter-spacing: 2px;
+      margin: 4px 0;
+    }
+    .reviews-count {
+      color: #888;
+      font-size: 1em;
+    }
+    .reviews-bars {
+      flex: 1;
+      min-width: 180px;
+    }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .bar-row span {
+      width: 16px;
+      font-size: 1em;
+      color: #888;
+    }
+    .bar {
+      flex: 1;
+      height: 10px;
+      background: #eee;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: #388e3c;
+      border-radius: 5px;
+    }
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .review {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #fafafa;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 1px 4px #0001;
+    }
+    .review-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #eee;
+    }
+    .review-user {
+      font-weight: 500;
+      font-size: 1.1em;
+      margin-bottom: 2px;
+    }
+    .review-date {
+      color: #888;
+      font-size: 0.95em;
+      margin-left: 8px;
+    }
+    .review-stars {
+      color: #fbc02d;
+      font-size: 1.1em;
+      margin-bottom: 4px;
+    }
+    .review-text {
+      color: #333;
+      font-size: 1.05em;
+    }
     @media (max-width: 1000px) {
-      .main-container { max-width: 100vw; }
-      .header-row, .screenshots-row, .section { padding: 24px 4vw 0 4vw; }
-      .screenshots-row img { height: 180px; min-width: 120px; }
+      .container-flex { flex-direction: column; gap: 0; }
+      .main-container, .similar-apps { width: 100%; margin-top: 24px; }
+      .similar-apps { max-width: 400px; margin: 24px auto 0 auto; }
+      .reviews-section { margin: 40px 2vw 0 2vw; }
     }
     @media (max-width: 600px) {
       .header-row { flex-direction: column; align-items: flex-start; gap: 16px; }
       .download-btn { margin-left: 0; margin-top: 16px; width: 100%; text-align: center; }
       .screenshots-row { gap: 10px; }
       .screenshots-row img { height: 120px; min-width: 80px; }
+      .section, .header-row, .screenshots-row { padding: 16px 2vw 0 2vw; }
+      .reviews-section { margin: 24px 0 0 0; padding-bottom: 16px; }
+      .reviews-header { flex-direction: column; gap: 12px; }
     }
   </style>
 </head>
 <body>
-    <div class="play-navbar">
-  <div class="play-navbar-inner">
-    <img src="glogo.png" class="play-logo" alt="Google Play" />
-    <span class="play-title">Google Play</span>
-    <nav class="play-nav">
-      <a href="#" class="active">Apps</a>
-      <a href="#">Games</a>
-      <a href="#">Books</a>
-      <a href="#">Children</a>
-    </nav>
+  <div class="play-navbar">
+    <div class="play-navbar-inner">
+      <img src="glogo.png" class="play-logo" alt="Google Play" />
+      <span class="play-title">Google Play</span>
+      <nav class="play-nav">
+        <a href="#" class="active">Apps</a>
+        <a href="#">Games</a>
+        <a href="#">Books</a>
+        <a href="#">Children</a>
+      </nav>
+    </div>
   </div>
-</div>
-  <div class="main-container">
-    <div class="header-row">
-      <img src="pccsa.png" alt="App Icon" class="app-icon">
-      <div class="app-details">
-        <div class="app-title">PCCSA</div>
-        <div class="publisher">pccsa.com</div>
-        <div class="rating-row">
-          <span class="stars">★ 4.6</span>
-          <span class="downloads">100K+ downloads</span>
+  <div class="container-flex">
+    <div class="main-container">
+      <div class="header-row">
+        <img src="pccsa.png" alt="App Icon" class="app-icon">
+        <div class="app-details">
+          <div class="app-title">PCCSA</div>
+          <div class="publisher">pccsa.com</div>
+          <div class="rating-row">
+            <span class="stars">★ 4.6</span>
+            <span class="downloads">100K+ downloads</span>
+          </div>
+        </div>
+        <a class="download-btn" href="pccsa.apk" download>Download APK</a>
+      </div>
+      <div class="screenshots-row">
+        <img src="1.jpg" alt="Screenshot 1">
+        <img src="2.jpg" alt="Screenshot 2">
+        <img src="3.jpg" alt="Screenshot 3">
+      </div>
+      <div class="section">
+        <div class="section-title">About this app</div>
+        <div class="desc">
+          PCCSA is a powerful app for pre-caste census sample acquisition. Download the latest version for Android and enjoy all the features.
+        </div>
+        <div class="section-title">What's new</div>
+        <div class="whatsnew">
+          - Bug fixes and performance improvements.<br>
+          - New features added!
+        </div>
+        <div class="qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play-google-pccsa.netlify.app/" alt="QR Code to download page">
+        </div>
+        <div class="note">
+          <b>Note:</b> You may need to allow installation from unknown sources in your device settings.
         </div>
       </div>
-      <a class="download-btn" href="pccsa.apk" download>Download APK</a>
+      <!-- Ratings and Reviews Section -->
+      <div class="reviews-section">
+        <div class="reviews-header">
+          <div>
+            <div class="reviews-score">4.6</div>
+            <div class="reviews-stars">★★★★★</div>
+            <div class="reviews-count">2,345 reviews</div>
+          </div>
+          <div class="reviews-bars">
+            <div class="bar-row"><span>5</span><div class="bar"><div class="bar-fill" style="width: 80%"></div></div></div>
+            <div class="bar-row"><span>4</span><div class="bar"><div class="bar-fill" style="width: 12%"></div></div></div>
+            <div class="bar-row"><span>3</span><div class="bar"><div class="bar-fill" style="width: 5%"></div></div></div>
+            <div class="bar-row"><span>2</span><div class="bar"><div class="bar-fill" style="width: 2%"></div></div></div>
+            <div class="bar-row"><span>1</span><div class="bar"><div class="bar-fill" style="width: 1%"></div></div></div>
+          </div>
+        </div>
+        <div class="review-list">
+          <div class="review">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="review-avatar" alt="User avatar">
+            <div>
+              <div class="review-user">Amit Sharma <span class="review-date">10 July 2025</span></div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Very useful app for field data collection. The interface is clean and the QR code download made it super easy to install. Highly recommended!</div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="review-avatar" alt="User avatar">
+            <div>
+              <div class="review-user">Priya Verma <span class="review-date">8 July 2025</span></div>
+              <div class="review-stars">★★★★☆</div>
+              <div class="review-text">App works well for our census project. Would love to see more language options in the future. Good job!</div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" class="review-avatar" alt="User avatar">
+            <div>
+              <div class="review-user">Ravi Kumar <span class="review-date">5 July 2025</span></div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Smooth installation and easy to use. The support team was quick to respond to my queries. Great experience overall.</div>
+            </div>
+          </div>
+          <div class="review">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="review-avatar" alt="User avatar">
+            <div>
+              <div class="review-user">Sunita Joshi <span class="review-date">2 July 2025</span></div>
+              <div class="review-stars">★★★☆☆</div>
+              <div class="review-text">The app is good but sometimes crashes on my older phone. Please fix this in the next update.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Ratings and Reviews Section -->
     </div>
-    <div class="screenshots-row">
-      <img src="1.jpg" alt="Screenshot 1">
-      <img src="2.jpg" alt="Screenshot 2">
-      <img src="3.jpg" alt="Screenshot 3">
-    </div>
-    <div class="section">
-      <div class="section-title">About this app</div>
-      <div class="desc">
-        PCCSA is a powerful app for pre-caste census sample acquisition. Download the latest version for Android and enjoy all the features.
-      </div>
-      <div class="section-title">What's new</div>
-      <div class="whatsnew">
-        - Bug fixes and performance improvements.<br>
-        - New features added!
-      </div>
-      <div class="qr">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play-google-pccsa.netlify.app/" alt="QR Code to download page">
-      </div>
-      <div class="note">
-        <b>Note:</b> You may need to allow installation from unknown sources in your device settings.
+    <div class="similar-apps">
+      <div class="similar-title">Similar apps</div>
+      <div class="similar-list">
+        <a class="similar-app" href="https://www.mygov.in/aarogya-setu-app/" target="_blank">
+          <img src="aarogya.png" alt="Aarogya Setu" />
+          <div>
+            <div class="similar-name">Aarogya Setu</div>
+            <div class="similar-rating">4.2★</div>
+          </div>
+        </a>
+        <a class="similar-app" href="https://play.google.com/store/apps/details?id=com.abdm" target="_blank">
+          <img src="abha.png" alt="ABHA" />
+          <div>
+            <div class="similar-name">ABHA</div>
+            <div class="similar-rating">4.1★</div>
+          </div>
+        </a>
+        <a class="similar-app" href="https://play.google.com/store/apps/details?id=in.gov.ndhm.phr" target="_blank">
+          <img src="ayusman.png" alt="Ayushman Bharat" />
+          <div>
+            <div class="similar-name">Ayushman Bharat</div>
+            <div class="similar-rating">4.3★</div>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 </body>
-
 </html>
