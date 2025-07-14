@@ -6,23 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <style>
-    body { background: #f5f5f5; font-family: 'Roboto', Arial, sans-serif; margin: 0; }
-    .playstore-card {
-      max-width: 700px;
-      margin: 40px auto;
+    body {
+      background: #f5f5f5;
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      color: #222;
+    }
+    .main-container {
+      max-width: 900px;
+      margin: 32px auto;
       background: #fff;
       border-radius: 18px;
       box-shadow: 0 2px 16px #0002;
-      padding: 32px 32px 24px 32px;
+      padding: 0 0 32px 0;
     }
-    .header { display: flex; align-items: center; }
-    .icon { width: 96px; height: 96px; border-radius: 20px; margin-right: 24px; }
-    .app-info { flex: 1; }
-    .app-title { font-size: 2.2em; font-weight: 700; margin: 0; }
-    .publisher { color: #666; font-size: 1.1em; margin-bottom: 8px; }
-    .rating-row { display: flex; align-items: center; margin-bottom: 8px; }
-    .stars { color: #fbc02d; font-size: 1.2em; margin-right: 8px; }
-    .downloads { color: #888; font-size: 1em; }
+    .header-row {
+      display: flex;
+      align-items: center;
+      padding: 32px 40px 0 40px;
+      gap: 32px;
+    }
+    .app-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      box-shadow: 0 2px 8px #0001;
+      background: #eee;
+    }
+    .app-details {
+      flex: 1;
+    }
+    .app-title {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+    }
+    .publisher {
+      color: #666;
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 8px;
+    }
+    .stars {
+      color: #fbc02d;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+    .downloads {
+      color: #888;
+      font-size: 1em;
+    }
     .download-btn {
       background: #2196f3;
       color: #fff;
@@ -31,40 +69,66 @@
       font-size: 1.2em;
       text-decoration: none;
       font-weight: 500;
-      margin: 24px 0 16px 0;
-      display: inline-block;
+      margin-left: 32px;
       transition: background 0.2s;
+      white-space: nowrap;
     }
     .download-btn:hover { background: #1769aa; }
-    .screenshots {
+    .screenshots-row {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       overflow-x: auto;
-      margin: 24px 0;
+      padding: 32px 40px 0 40px;
     }
-    .screenshots img {
-      height: 220px;
-      border-radius: 12px;
+    .screenshots-row img {
+      height: 320px;
+      border-radius: 16px;
       box-shadow: 0 2px 8px #0001;
       background: #eee;
+      min-width: 180px;
+      object-fit: cover;
     }
-    .section-title { font-size: 1.2em; font-weight: 500; margin: 24px 0 8px 0; }
-    .desc, .whatsnew { color: #444; font-size: 1.08em; }
-    .qr { margin: 24px 0 0 0; text-align: center; }
-    .note { color: #888; font-size: 0.95em; margin-top: 16px; }
-    @media (max-width: 800px) {
-      .playstore-card { padding: 16px 4vw; }
-      .header { flex-direction: column; align-items: flex-start; }
-      .icon { margin-bottom: 12px; }
-      .screenshots img { height: 140px; }
+    .section {
+      padding: 32px 40px 0 40px;
+    }
+    .section-title {
+      font-size: 1.2em;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .desc, .whatsnew {
+      color: #444;
+      font-size: 1.08em;
+      margin-bottom: 16px;
+    }
+    .qr {
+      margin: 32px 0 0 0;
+      text-align: center;
+    }
+    .note {
+      color: #888;
+      font-size: 0.95em;
+      margin-top: 16px;
+      text-align: center;
+    }
+    @media (max-width: 1000px) {
+      .main-container { max-width: 100vw; }
+      .header-row, .screenshots-row, .section { padding: 24px 4vw 0 4vw; }
+      .screenshots-row img { height: 180px; min-width: 120px; }
+    }
+    @media (max-width: 600px) {
+      .header-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .download-btn { margin-left: 0; margin-top: 16px; width: 100%; text-align: center; }
+      .screenshots-row { gap: 10px; }
+      .screenshots-row img { height: 120px; min-width: 80px; }
     }
   </style>
 </head>
 <body>
-  <div class="playstore-card">
-    <div class="header">
-      <img src="pccsa.png" alt="App Icon" class="icon">
-      <div class="app-info">
+  <div class="main-container">
+    <div class="header-row">
+      <img src="icon.png" alt="App Icon" class="app-icon">
+      <div class="app-details">
         <div class="app-title">PCCSA</div>
         <div class="publisher">pccsa.com</div>
         <div class="rating-row">
@@ -74,25 +138,27 @@
       </div>
       <a class="download-btn" href="pccsa.apk" download>Download APK</a>
     </div>
-    <div class="screenshots">
-      <img src="1.png" alt="Screenshot 1">
-      <img src="2.png" alt="Screenshot 2">
-      <img src="3.png" alt="Screenshot 3">
+    <div class="screenshots-row">
+      <img src="1.jpg" alt="Screenshot 1">
+      <img src="2.jpg" alt="Screenshot 2">
+      <img src="3.jpg" alt="Screenshot 3">
     </div>
-    <div class="section-title">About this app</div>
-    <div class="desc">
-      PCCSA is a powerful app for pre-caste census sample acquisition. Download the latest version for Android and enjoy all the features.
-    </div>
-    <div class="section-title">What's new</div>
-    <div class="whatsnew">
-      - Bug fixes and performance improvements.<br>
-      - New features added!
-    </div>
-    <div class="qr">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play-google-pccsa.netlify.app/" alt="QR Code to download page">
-    </div>
-    <div class="note">
-      <b>Note:</b> You may need to allow installation from unknown sources in your device settings.
+    <div class="section">
+      <div class="section-title">About this app</div>
+      <div class="desc">
+        PCCSA is a powerful app for pre-caste census sample acquisition. Download the latest version for Android and enjoy all the features.
+      </div>
+      <div class="section-title">What's new</div>
+      <div class="whatsnew">
+        - Bug fixes and performance improvements.<br>
+        - New features added!
+      </div>
+      <div class="qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://play-google-pccsa.netlify.app/" alt="QR Code to download page">
+      </div>
+      <div class="note">
+        <b>Note:</b> You may need to allow installation from unknown sources in your device settings.
+      </div>
     </div>
   </div>
 </body>
