@@ -6,6 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
   <style>
+    .play-navbar {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 1px 4px #0001;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+.play-navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 24px;
+}
+.play-logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+.play-title {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #444;
+  margin-right: 32px;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.play-nav {
+  display: flex;
+  gap: 24px;
+}
+.play-nav a {
+  color: #444;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 0 0 4px 0;
+  position: relative;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.play-nav a.active {
+  color: #00897b;
+  font-weight: 500;
+}
+.play-nav a.active::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 28px;
+  border-bottom: 3px solid #00897b;
+  border-radius: 2px;
+  margin-top: 2px;
+}
     body {
       background: #f5f5f5;
       font-family: 'Roboto', Arial, sans-serif;
@@ -127,7 +180,7 @@
 <body>
   <div class="main-container">
     <div class="header-row">
-      <img src="icon.png" alt="App Icon" class="app-icon">
+      <img src="pccsa.png" alt="App Icon" class="app-icon">
       <div class="app-details">
         <div class="app-title">PCCSA</div>
         <div class="publisher">pccsa.com</div>
@@ -162,4 +215,16 @@
     </div>
   </div>
 </body>
+  <div class="play-navbar">
+  <div class="play-navbar-inner">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Google_Play_2016_icon.svg" class="play-logo" alt="Google Play" />
+    <span class="play-title">Google Play</span>
+    <nav class="play-nav">
+      <a href="#" class="active">Apps</a>
+      <a href="#">Games</a>
+      <a href="#">Books</a>
+      <a href="#">Children</a>
+    </nav>
+  </div>
+</div>
 </html>
