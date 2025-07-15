@@ -117,7 +117,7 @@
       background: none;
       border-radius: 8px;
       padding: 0;
-      margin: 12px 0 0 24px;
+      margin: 12px 0 0 0;
       box-shadow: none;
       gap: 0;
     }
@@ -388,7 +388,7 @@
       .app-details { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
       .app-title { font-size: 1.1em; }
       .info-row {
-        margin-left: 12px;
+        margin-left: 0;
       }
       .info-item {
         min-width: 60px;
@@ -462,39 +462,37 @@
     <div class="header-row" style="align-items: flex-start;">
       <img src="pccsa.png" alt="App Icon" class="app-icon">
       <div class="app-details" style="display: flex; flex-direction: column; justify-content: center;">
-        <div style="display: flex; flex-direction: row; align-items: center; gap: 12px;">
-          <div>
-            <div class="app-title" style="font-size:1.5em; font-weight:500;">PCCSA</div>
-            <div class="publisher" style="font-size:1em; color:#8ab4f8; font-weight:400;">pccsa.com</div>
-          </div>
+        <div>
+          <div class="app-title" style="font-size:1.5em; font-weight:500;">PCCSA</div>
+          <div class="publisher" style="font-size:1em; color:#8ab4f8; font-weight:400;">pccsa.com</div>
         </div>
-        <div class="info-row">
-          <div class="info-item">
-            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;display:flex;align-items:center;justify-content:flex-start;">
-              4.6<span style="color:#fbc02d;margin-left:2px;">★</span>
-            </div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">2,345 reviews</div>
-          </div>
-          <div class="divider"></div>
-          <div class="info-item">
-            <div class="info-icon">
-              <img src="govt.png" alt="Government" style="height:22px;">
-            </div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Government</div>
-          </div>
-          <div class="divider"></div>
-          <div class="info-item">
-            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">1Cr+</div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Downloads</div>
-          </div>
-          <div class="divider"></div>
-          <div class="info-item">
-            <div class="info-icon">
-              <img src="3plus.png" alt="Rated for 3+" style="height:22px;">
-            </div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Rated for 3+</div>
-          </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="info-item">
+        <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;display:flex;align-items:center;justify-content:flex-start;">
+          4.6<span style="color:#fbc02d;margin-left:2px;">★</span>
         </div>
+        <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">2,345 reviews</div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-item">
+        <div class="info-icon">
+          <img src="govt.png" alt="Government" style="height:22px;">
+        </div>
+        <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Government</div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-item">
+        <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">1Cr+</div>
+        <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Downloads</div>
+      </div>
+      <div class="divider"></div>
+      <div class="info-item">
+        <div class="info-icon">
+          <img src="3plus.png" alt="Rated for 3+" style="height:22px;">
+        </div>
+        <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Rated for 3+</div>
       </div>
     </div>
     <a class="install-btn" href="pccsa.apk" download style="background:#8ab4f8;color:#222;font-weight:500;font-size:1.1em;border-radius:12px;margin:24px 16px 0 16px;padding:14px 0;display:block;text-align:center;position:relative;box-shadow:none;">Install <span style="position:absolute;right:24px;top:50%;transform:translateY(-50%);font-size:1.2em;">&#9660;</span></a>
