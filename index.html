@@ -358,12 +358,16 @@
         padding: 0 !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+        min-width: 0;
+        overflow-x: auto;
       }
       .info-row span {
         font-size: 0.97em !important;
         min-width: 0 !important;
         padding: 0 2px !important;
-        white-space: nowrap !important;
+        flex: 1 1 0 !important;
+        word-break: break-word !important;
+        text-align: center;
       }
       .info-row img { height: 18px !important; margin-bottom: 2px !important; }
       .install-btn { margin: 20px 4vw 0 4vw; width: calc(100% - 8vw); }
