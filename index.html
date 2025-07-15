@@ -112,7 +112,7 @@
     }
     .info-row {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: flex-start;
       background: none;
       border-radius: 8px;
@@ -136,7 +136,7 @@
       margin-bottom: 2px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
     }
     .info-icon {
       margin-bottom: 2px;
@@ -149,6 +149,7 @@
       font-size: 0.97em;
       color: #bbb;
       margin-top: 2px;
+      white-space: nowrap;
     }
     .divider {
       width: 1px;
@@ -469,29 +470,29 @@
         </div>
         <div class="info-row">
           <div class="info-item">
-            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;display:flex;align-items:center;justify-content:center;">
+            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;display:flex;align-items:center;justify-content:flex-start;">
               4.6<span style="color:#fbc02d;margin-left:2px;">★</span>
             </div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;">2,345 reviews</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">2,345 reviews</div>
           </div>
           <div class="divider"></div>
           <div class="info-item">
             <div class="info-icon">
               <img src="govt.png" alt="Government" style="height:22px;">
             </div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;">Government</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Government</div>
           </div>
           <div class="divider"></div>
           <div class="info-item">
             <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">1Cr+</div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;">Downloads</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Downloads</div>
           </div>
           <div class="divider"></div>
           <div class="info-item">
             <div class="info-icon">
               <img src="3plus.png" alt="Rated for 3+" style="height:22px;">
             </div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;">Rated for 3+</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;white-space:nowrap;">Rated for 3+</div>
           </div>
         </div>
       </div>
