@@ -143,10 +143,19 @@
     }
     .info-row span {
       font-size: 0.97em;
-      min-width: 90px;
+      min-width: 110px;
       padding: 0 2px;
       white-space: nowrap;
       text-align: center;
+      flex: 0 0 auto;
+      background: none !important;
+      border-radius: 0 !important;
+    }
+    .divider {
+      width: 1px;
+      height: 32px;
+      background: #333;
+      margin: 0 8px;
       flex: 0 0 auto;
     }
     .star {
@@ -371,6 +380,8 @@
         align-items: flex-start !important;
         gap: 12px !important;
         padding: 20px 0 0 0 !important;
+        width: 100% !important;
+        overflow-x: visible !important;
       }
       .app-icon { width: 56px; height: 56px; }
       .app-details { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
@@ -409,8 +420,16 @@
         white-space: nowrap !important;
         text-align: center;
         flex: 0 0 auto !important;
+        background: none !important;
+        border-radius: 0 !important;
       }
-      .info-row img { height: 18px !important; margin-bottom: 2px !important; }
+      .divider {
+        width: 1px;
+        height: 32px;
+        background: #333;
+        margin: 0 8px;
+        flex: 0 0 auto;
+      }
       .install-btn { margin: 20px 4vw 0 4vw; width: calc(100% - 8vw); }
       .screenshots-row { gap: 8px; padding: 16px 4vw 0 4vw; }
       .screenshots-row img { height: 90px; min-width: 60px; }
@@ -487,18 +506,18 @@
             <span style="font-weight:600;color:#fff;font-size:1.08em;">4.6★</span>
             <span style="font-size:0.97em;color:#bbb;">2,345 reviews</span>
           </span>
-          <span style="width:1px;background:#333;height:32px;margin:0 8px;"></span>
+          <span class="divider"></span>
           <span style="display:flex;flex-direction:column;align-items:center;flex:1;min-width:0;">
             <img src="govt.png" alt="government" style="height:22px; margin-bottom:2px;">
             <span style="font-weight:600;color:#fff;font-size:1.08em;">Government</span>
             <span style="font-size:0.97em;color:#bbb;">&nbsp;</span>
           </span>
-          <span style="width:1px;background:#333;height:32px;margin:0 8px;"></span>
+          <span class="divider"></span>
           <span style="display:flex;flex-direction:column;align-items:center;flex:1;min-width:0;">
             <span style="font-weight:600;color:#fff;font-size:1.08em;">1Cr+</span>
             <span style="font-size:0.97em;color:#bbb;">Downloads</span>
           </span>
-          <span style="width:1px;background:#333;height:32px;margin:0 8px;"></span>
+          <span class="divider"></span>
           <span style="display:flex;flex-direction:column;align-items:center;flex:1;min-width:0;">
             <img src="3plus.png" alt="3plus" style="height:22px; margin-bottom:2px;">
             <span style="font-weight:600;color:#fff;font-size:1.08em;">Rated for 3+</span>
