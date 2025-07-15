@@ -113,7 +113,7 @@
     .info-row {
       display: flex;
       justify-content: center;
-      align-items: stretch;
+      align-items: flex-start;
       background: none;
       border-radius: 8px;
       padding: 0;
@@ -129,22 +129,26 @@
       padding: 0 16px;
       text-align: center;
     }
+    .info-title {
+      font-weight: 600;
+      font-size: 1.08em;
+      color: #fff;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .info-icon {
       margin-bottom: 2px;
-      font-size: 1.4em;
       height: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .info-title {
-      font-weight: 600;
-      font-size: 1em;
-      margin-bottom: 2px;
-    }
     .info-desc {
-      font-size: 0.9em;
+      font-size: 0.97em;
       color: #bbb;
+      margin-top: 2px;
     }
     .divider {
       width: 1px;
@@ -465,8 +469,9 @@
         </div>
         <div class="info-row">
           <div class="info-item">
-            <div class="info-icon" style="font-size:1.5em;color:#fbc02d;">★</div>
-            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">4.6</div>
+            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;display:flex;align-items:center;justify-content:center;">
+              4.6<span style="color:#fbc02d;margin-left:2px;">★</span>
+            </div>
             <div class="info-desc" style="font-size:0.97em;color:#bbb;">2,345 reviews</div>
           </div>
           <div class="divider"></div>
@@ -474,14 +479,10 @@
             <div class="info-icon">
               <img src="govt.png" alt="Government" style="height:22px;">
             </div>
-            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">Government</div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;">&nbsp;</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;">Government</div>
           </div>
           <div class="divider"></div>
           <div class="info-item">
-            <div class="info-icon">
-              <img src="downloads.png" alt="Downloads" style="height:22px;">
-            </div>
             <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">1Cr+</div>
             <div class="info-desc" style="font-size:0.97em;color:#bbb;">Downloads</div>
           </div>
@@ -490,8 +491,7 @@
             <div class="info-icon">
               <img src="3plus.png" alt="Rated for 3+" style="height:22px;">
             </div>
-            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">Rated for 3+</div>
-            <div class="info-desc" style="font-size:0.97em;color:#bbb;">&nbsp;</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;">Rated for 3+</div>
           </div>
         </div>
       </div>
