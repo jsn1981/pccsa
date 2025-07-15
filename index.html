@@ -83,12 +83,16 @@
       border-radius: var(--card-radius);
       box-shadow: 0 2px 16px #0004;
       padding: 0 0 32px 0;
+      width: 100%;
+      overflow-x: visible;
     }
     .header-row {
       display: flex;
       align-items: center;
       padding: 32px 24px 0 24px;
       gap: 20px;
+      width: 100%;
+      overflow-x: visible;
     }
     .app-icon {
       width: 80px;
@@ -114,11 +118,36 @@
     }
     .info-row {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      gap: 16px;
-      color: var(--text-light);
-      font-size: 1em;
-      margin-bottom: 8px;
+      justify-content: flex-start;
+      gap: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
+      min-width: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: #888 #232323;
+    }
+    .info-row::-webkit-scrollbar {
+      height: 6px;
+      background: #232323;
+    }
+    .info-row::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 3px;
+    }
+    .info-row span {
+      font-size: 0.97em;
+      min-width: 90px;
+      padding: 0 2px;
+      white-space: nowrap;
+      text-align: center;
+      flex: 0 0 auto;
     }
     .star {
       color: var(--star);
