@@ -112,45 +112,46 @@
     }
     .info-row {
       display: flex;
-      flex-direction: row;
+      justify-content: center;
       align-items: stretch;
+      background: none;
+      border-radius: 8px;
+      padding: 0;
+      margin: 12px 0 0 0;
+      box-shadow: none;
       gap: 0;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scrollbar-width: thin;
-      scrollbar-color: #888 #232323;
     }
-    .info-row::-webkit-scrollbar {
-      height: 6px;
-      background: #232323;
-    }
-    .info-row::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 3px;
-    }
-    .info-row span {
+    .info-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      min-width: 90px;
-      max-width: 120px;
-      padding: 0 2px;
-      white-space: nowrap;
+      min-width: 80px;
+      padding: 0 16px;
       text-align: center;
-      flex: 0 0 auto;
-      background: none !important;
-      border-radius: 0 !important;
+    }
+    .info-icon {
+      margin-bottom: 2px;
+      font-size: 1.4em;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .info-title {
+      font-weight: 600;
+      font-size: 1em;
+      margin-bottom: 2px;
+    }
+    .info-desc {
+      font-size: 0.9em;
+      color: #bbb;
     }
     .divider {
       width: 1px;
-      height: 32px;
       background: #333;
-      margin: 0 8px;
-      flex: 0 0 auto;
+      margin: 0;
+      height: 36px;
+      align-self: center;
     }
     .star {
       color: var(--star);
@@ -382,49 +383,14 @@
       .app-details { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
       .app-title { font-size: 1.1em; }
       .info-row {
-        margin-top: 0 !important;
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        gap: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box;
-        padding: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        min-width: 0;
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-        scrollbar-width: thin;
-        scrollbar-color: #888 #232323;
+        padding: 0;
       }
-      .info-row::-webkit-scrollbar {
-        height: 6px;
-        background: #232323;
-      }
-      .info-row::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 3px;
-      }
-      .info-row span {
-        font-size: 0.97em !important;
-        width: 110px !important;
-        padding: 0 2px !important;
-        white-space: nowrap !important;
-        text-align: center;
-        flex: 0 0 110px !important;
-        background: none !important;
-        border-radius: 0 !important;
+      .info-item {
+        min-width: 60px;
+        padding: 0 8px;
       }
       .divider {
-        width: 1px;
-        height: 32px;
-        background: #333;
-        margin: 0 8px;
-        flex: 0 0 auto;
+        height: 28px;
       }
       .install-btn { margin: 20px 4vw 0 4vw; width: calc(100% - 8vw); }
       .screenshots-row { gap: 8px; padding: 16px 4vw 0 4vw; }
@@ -497,28 +463,36 @@
             <div class="publisher" style="font-size:1em; color:#8ab4f8; font-weight:400;">pccsa.com</div>
           </div>
         </div>
-        <div class="info-row" style="margin-top:8px; display:flex; align-items:center; gap:0;">
-          <span>
-            <span style="font-weight:600;color:#fff;font-size:1.08em;">4.6★</span>
-            <span style="font-size:0.97em;color:#bbb;">2,345 reviews</span>
-          </span>
-          <span class="divider"></span>
-          <span>
-            <img src="govt.png" alt="government" style="height:22px; margin-bottom:2px;">
-            <span style="font-weight:600;color:#fff;font-size:1.08em;">Government</span>
-            <span style="font-size:0.97em;color:#bbb;">&nbsp;</span>
-          </span>
-          <span class="divider"></span>
-          <span>
-            <span style="font-weight:600;color:#fff;font-size:1.08em;">1Cr+</span>
-            <span style="font-size:0.97em;color:#bbb;">Downloads</span>
-          </span>
-          <span class="divider"></span>
-          <span>
-            <img src="3plus.png" alt="3plus" style="height:22px; margin-bottom:2px;">
-            <span style="font-weight:600;color:#fff;font-size:1.08em;">Rated for 3+</span>
-            <span style="font-size:0.97em;color:#bbb;">&nbsp;</span>
-          </span>
+        <div class="info-row">
+          <div class="info-item">
+            <div class="info-icon" style="font-size:1.5em;color:#fbc02d;">★</div>
+            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">4.6</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;">2,345 reviews</div>
+          </div>
+          <div class="divider"></div>
+          <div class="info-item">
+            <div class="info-icon">
+              <img src="govt.png" alt="Government" style="height:22px;">
+            </div>
+            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">Government</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;">&nbsp;</div>
+          </div>
+          <div class="divider"></div>
+          <div class="info-item">
+            <div class="info-icon">
+              <img src="downloads.png" alt="Downloads" style="height:22px;">
+            </div>
+            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">1Cr+</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;">Downloads</div>
+          </div>
+          <div class="divider"></div>
+          <div class="info-item">
+            <div class="info-icon">
+              <img src="3plus.png" alt="Rated for 3+" style="height:22px;">
+            </div>
+            <div class="info-title" style="font-weight:600;color:#fff;font-size:1.08em;">Rated for 3+</div>
+            <div class="info-desc" style="font-size:0.97em;color:#bbb;">&nbsp;</div>
+          </div>
         </div>
       </div>
     </div>
