@@ -379,9 +379,9 @@
         margin-top: 0 !important;
         display: flex !important;
         flex-direction: row !important;
-        flex-wrap: wrap !important;
+        flex-wrap: nowrap !important;
         align-items: center !important;
-        justify-content: space-between !important;
+        justify-content: flex-start !important;
         gap: 0 !important;
         width: 100%;
         box-sizing: border-box;
@@ -389,16 +389,26 @@
         margin-left: 0 !important;
         margin-right: 0 !important;
         min-width: 0;
-        overflow-x: visible !important;
-        overflow-y: visible !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scrollbar-width: thin;
+        scrollbar-color: #888 #232323;
+      }
+      .info-row::-webkit-scrollbar {
+        height: 6px;
+        background: #232323;
+      }
+      .info-row::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
       }
       .info-row span {
         font-size: 0.97em !important;
-        min-width: 0 !important;
+        min-width: 110px !important;
         padding: 0 2px !important;
+        white-space: nowrap !important;
         text-align: center;
-        flex: 1 1 0 !important;
-        white-space: normal !important;
+        flex: 0 0 auto !important;
       }
       .info-row img { height: 18px !important; margin-bottom: 2px !important; }
       .install-btn { margin: 20px 4vw 0 4vw; width: calc(100% - 8vw); }
