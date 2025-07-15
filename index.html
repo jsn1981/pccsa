@@ -355,6 +355,37 @@
       .more-list { gap: 8px; }
       .more-app img { width: 40px; height: 40px; }
     }
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+.lightbox-overlay.active {
+  display: flex;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px #000a;
+  background: #222;
+}
+.lightbox-overlay:after {
+  content: "✕";
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  color: #fff;
+  font-size: 2.2em;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  text-shadow: 0 2px 8px #000;
+}
   </style>
 </head>
 <body>
@@ -385,12 +416,12 @@
     </div>
     <a class="install-btn" href="pccsa.apk" download>Install</a>
     <div class="install-note">Install on phone. More devices available.</div>
-    <div class="screenshots-row">
-      <img src="1.jpg" alt="Screenshot 1">
-      <img src="2.jpg" alt="Screenshot 2">
-      <img src="3.jpg" alt="Screenshot 3">
-      <img src="4.jpg" alt="Screenshot 4">
-    </div>
+<div class="screenshots-row">
+  <a href="1.jpg" class="screenshot-link"><img src="1.jpg" alt="Screenshot 1"></a>
+  <a href="2.jpg" class="screenshot-link"><img src="2.jpg" alt="Screenshot 2"></a>
+  <a href="3.jpg" class="screenshot-link"><img src="3.jpg" alt="Screenshot 3"></a>
+  <a href="4.jpg" class="screenshot-link"><img src="4.jpg" alt="Screenshot 4"></a>
+</div>
     <div class="section">
       <div class="section-title">About this app</div>
       <div class="desc">
@@ -502,5 +533,32 @@
       </div>
     </div>
   </div>
+  <div class="lightbox-overlay" id="lightbox">
+  <img class="lightbox-img" id="lightbox-img" src="" alt="Screenshot enlarged">
+</div>
+<script>
+  // Lightbox logic
+  document.querySelectorAll('.screenshot-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('lightbox-img').src = this.href;
+      document.getElementById('lightbox').classList.add('active');
+    });
+  });
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this || e.target === this.querySelector('.lightbox-img')) {
+      this.classList.remove('active');
+      document.getElementById('lightbox-img').src = '';
+    }
+  });
+  // Close on pressing X (overlay:after)
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('active');
+  });
+  // Close on ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === "Escape") document.getElementById('lightbox').classList.remove('active');
+  });
+</script>
 </body>
 </html>
